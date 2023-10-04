@@ -51,7 +51,10 @@ require('flit').setup {
   multiline = true, 
   opts = {}
 }
-
+meow = "a"
+	meow = "b"
+meow = "a"
+  meow = "a"
 local chadtree_settings = { ['view.width'] = 31 }
 local gradient = {
   '#74d7ec', '#96cde2', '#b9c3d9', '#dcb9d0', '#ffafc7', '#ffafc7', '#fec1d2', '#fdd4de', '#fce6e9', '#fbf9f5', '#fbf9f5', '#fce8ea', '#fdd7e0', '#fec6d5', '#ffb5cb', '#ffb5cb', '#dcbdd2', '#b9c5da', '#96cde2', '#73d5ea'
@@ -66,11 +69,11 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.cmd('colorscheme oxocarbon')
 vim.opt.shiftwidth = 2 
-vim.opt.tabstop = 2 
 vim.o.undofile = true 
 vim.o.timeout = true
 vim.o.timeoutlen = 300
- 
+vim.opt.expandtab = true
+vim.bo.softtabstop = 2 
 if vim.fn.has('persistent_undo') == 1 then
   local target_path = vim.fn.expand('~/.undodir')
   if vim.fn.isdirectory(target_path) ~= 1 then
