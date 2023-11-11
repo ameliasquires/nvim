@@ -8,6 +8,7 @@ lspconfig.clangd.setup{
 }
 lspconfig.zls.setup {}
 lspconfig.lua_ls.setup {}
+lspconfig.solargraph.setup {}
 --[[
 require('clangd_extensions').setup{
 	server = {
@@ -57,7 +58,7 @@ require('illuminate').configure({
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { 'c', 'lua', 'cpp', 'python', 'java', 'javascript'},
+  ensure_installed = { 'c', 'lua', 'cpp', 'python', 'java', 'javascript', 'ruby'},
  
   sync_install = false,
 
