@@ -21,7 +21,13 @@ local packer_bootstrap = ensure_packer()
 
 
 return require('packer').startup(function(use)
-	use 'mfussenegger/nvim-jdtls'
+  --use 'm4xshen/hardtime.nvim'
+  use 'sindrets/diffview.nvim'
+  use 'm00qek/baleia.nvim'
+  use 'potamides/pantran.nvim'
+  --use 'chrisbra/Colorizer'
+  use 'RaafatTurki/hex.nvim'
+  use 'mfussenegger/nvim-jdtls'
 	use 'nvim-lua/completion-nvim'
 	use 'ziglang/zig.vim'
 	use 'p00f/clangd_extensions.nvim'
@@ -52,10 +58,7 @@ return require('packer').startup(function(use)
 	use 'DNLHC/glance.nvim'
 	use 'marko-cerovac/material.nvim'
 	use 'Abstract-IDE/Abstract-cs'
-	use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-  	requires = { {'nvim-lua/plenary.nvim'} }
-	}
+	use 'nvim-telescope/telescope.nvim'
 	use 'ggandor/flit.nvim'
 	use 'RRethy/nvim-base16'
 	use 'lewis6991/impatient.nvim'

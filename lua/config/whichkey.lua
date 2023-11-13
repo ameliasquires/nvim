@@ -21,8 +21,8 @@ function M.setup()
 
   local mappings = {
     --["w"] = { "<cmd>update!<CR>", "Save" }, 
-    ["f"] = { "<cmd>Neotree<CR>", "fs"},
-    ["t"] = { "<cmd>UndotreeToggle<CR>", "clip tree"},		
+    ["f"] = { "<cmd>Neotree toggle<CR>", "fs"},
+    ["c"] = { "<cmd>UndotreeToggle<CR>", "clip tree"},
     ["e"] = { "<cmd>TroubleToggle<CR>", "errors" },
 		["g"] = {
 			name = "'games'",
@@ -36,14 +36,35 @@ function M.setup()
 			["i"] = { "<cmd>lua require('sudoku').setup{}<CR><cmd>Sudoku<CR>", "sudoku" },
 		},
 		["n"] = {
-			name = "sci",
-			["i"] = { "<cmd>lua require('nabla').toggle_virt({autogen=true})<CR>", "toggle" },	
-		},
+			name = "visual changes",
+      ["d"] = { function ()
+        if not _G.__diffview_open then
+          _G.__diffview_open = true;
+          vim.cmd("DiffviewOpen");
+        else _G.__diffview_open = false;
+          vim.cmd("DiffviewClose")
+        end
+      end, "toggle diff"},
+      ["s"] = { "<cmd>if &spell<CR>set nospell<CR>else<CR>set spell<CR>endif<CR>", "spellcheck"},
+			["i"] = { "<cmd>lua require('nabla').toggle_virt({autogen=true})<CR>", "toggle markdown" },
+      ["h"] = { "<cmd>HexToggle<CR>", "hex" }
+    },
+    ["u"] = {
+      name = "utils",
+      ["h"] = { "<cmd>Hardtime toggle<CR>", "toggle hardtime" },
+    },
 		["q"] = {
-			name = "quick chords",
+			name = "quick",
 			["l"] = { "0v$", "line" },
-			["s"] = { "\"+y", "system grab" },	
-		},
+      ["s"] = { "\"+y", "system grab" },
+    },
+    ["t"] = {
+      name = "telescope",
+      ["f"] = { "<cmd>Telescope find_files<CR>", "find files" },
+      ["b"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
+      ["c"] = { "<cmd>Telescope git_commits<CR>", "git commits" },
+      ["l"] = { "<cmd>Telescope live_grep<CR>", "ripgrep" }
+    },
 		["z"] = {
       name = "packer",
       c = { "<cmd>PackerCompile<cr>", "compile" },
