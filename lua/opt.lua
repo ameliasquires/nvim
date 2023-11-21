@@ -11,12 +11,12 @@ require('hardtime').setup({enabled=false})
 require('hex').setup()
 require("todo-comments").setup{}
 require('toggleterm').setup({
-	direction = 'float',
-	close_on_exit = true,
-	active = true,
-	insert_mappings = true,
-	start_in_insert = true,
-	terminal_mappings = true,
+  direction = 'float',
+  close_on_exit = true,
+  active = true,
+  insert_mappings = true,
+  start_in_insert = true,
+  terminal_mappings = true,
 	open_mapping = [[<c-\>]],
 })
 require('neo-tree').setup({
@@ -26,7 +26,7 @@ require('neo-tree').setup({
 		--use_git_status_colors = false,
 	},
 	git_status = {
-		symbols = {
+    symbols = {
 			added = '+',
 			modified = '~',
 			deleted = 'x',
