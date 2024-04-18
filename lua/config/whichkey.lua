@@ -63,7 +63,9 @@ function M.setup()
       ["f"] = { "<cmd>Telescope find_files<CR>", "find files" },
       ["b"] = { "<cmd>Telescope git_branches<CR>", "git branches" },
       ["c"] = { "<cmd>Telescope git_commits<CR>", "git commits" },
-      ["l"] = { "<cmd>Telescope live_grep<CR>", "ripgrep" }
+      ["l"] = { "<cmd>Telescope live_grep<CR>", "ripgrep" },
+      ["z"] = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "fuzzy" },
+
     },
 		["z"] = {
       name = "packer",

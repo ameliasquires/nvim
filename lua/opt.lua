@@ -7,7 +7,7 @@ require('startup').setup({theme = 'evil'})
 require('gitsigns').setup()
 --require("nvim-tree").setup()
 require('telescope').setup()
-require('hardtime').setup({enabled=false})
+--require('hardtime').setup({enabled=false})
 require('hex').setup()
 require("todo-comments").setup{}
 require('toggleterm').setup({

@@ -58,8 +58,12 @@ return require('packer').startup(function(use)
 	use 'DNLHC/glance.nvim'
 	use 'marko-cerovac/material.nvim'
 	use 'Abstract-IDE/Abstract-cs'
-	use 'nvim-telescope/telescope.nvim'
-	use 'ggandor/flit.nvim'
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+  -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use 'ggandor/flit.nvim'
 	use 'RRethy/nvim-base16'
 	use 'lewis6991/impatient.nvim'
 	use 'danilamihailov/beacon.nvim'	
