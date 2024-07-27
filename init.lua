@@ -94,7 +94,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'farmergreg/vim-lastplace' 
-  use {'akinsho/bufferline.nvim', tag = 'v3.*', requires = 'nvim-tree/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons'}
   use 'gen740/SmoothCursor.nvim' 
   use 'gennaro-tedesco/nvim-peekup'
   use 'gelguy/wilder.nvim' 

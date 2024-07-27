@@ -2,13 +2,22 @@ require('mason').setup()
 --require('mason-lspconfig').setup()
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
-lspconfig.eslint.setup{}
 lspconfig.clangd.setup{
     capabilities = { offsetEncoding = 'utf-8' }, -- = capabilities
 }
 lspconfig.zls.setup {}
-lspconfig.lua_ls.setup {}
+lspconfig.lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        disable = {"lowercase-global", "trailing-space", "unused-local"}
+      }
+    }
+  }
+}
 lspconfig.solargraph.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.csharp_ls.setup {}
 --[[
 require('clangd_extensions').setup{
 	server = {
@@ -22,10 +31,9 @@ require('clangd_extensions').setup{
 }
 --]]
 local null_ls = require('null-ls')
-
 null_ls.setup({
     sources = {
-        null_ls.builtins.formatting.stylua,
+        --null_ls.builtins.formatting.stylua,
         --null_ls.builtins.diagnostics.eslint,
         --null_ls.builtins.completion.spell,
 				--null_ls.builtins.diagnostics.codespell,
